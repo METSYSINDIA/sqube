@@ -6,72 +6,131 @@
     <title>SQUBE</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff; /* Alice Blue */
+            background-color: #f4f4f9; /* Light Gray */
+            color: #333; /* Dark Gray */
         }
 
         header {
-            background-color: #c1ecc4; /* Green */
-            color: rgb(17, 17, 17);
+            background-color: #96b3b3; /* Green */
+            color: white;
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
         }
 
         nav ul li a {
-            color: rgb(8, 8, 8);
+            color: white;
             text-decoration: none;
-            padding: 0.5rem;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
             transition: background-color 0.3s;
         }
 
         nav ul li a:hover {
-            background-color: #cddbce;
+            background-color: #45a049; /* Dark Green */
         }
 
         main {
-            padding: 1rem;
+            padding: 2rem;
         }
 
         section {
             margin-bottom: 2rem;
-            padding: 1rem;
-            background-color: #ffffff; /* White */
+            padding: 1.5rem;
+            background-color: white; 
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         #home {
-            background-color: #a7d0ff; /* Light Green */
+            background-color: #f0fff4; /* Light Green */
         }
 
-        #about {
-            background-color: #ffe6e6; /* Light Red */
+        #home h2 {
+            margin-top: 0;
         }
 
-        #contact {
-            background-color: #e6e6ff; /* Light Blue */
+        #home .blog-preview {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9; /* Light Gray */
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        #home .blog-preview h3 {
+            margin-top: 0;
+        }
+
+        #home .blog-preview .writer {
+            font-style: italic;
+            color: #666; /* Light Gray */
+        }
+
+        #home .blog-preview .like-button {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: #fff; /* White */
+            background-color: #4CAF50; /* Green */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #home .blog-preview .like-button:hover {
+            background-color: #45a049; /* Dark Green */
+        }
+
+        #home .blog-preview .like-count {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+            color: #4CAF50; /* Green */
+        }
+
+        #home .blog-preview .read-more {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: #4CAF50; /* Green */
+            background-color: transparent;
+            border: 1px solid #4CAF50; /* Green */
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #home .blog-preview .read-more:hover {
+            background-color: #4CAF50; /* Green */
+            color: white;
         }
 
         footer {
-            background-color: #6ab4df; /* Green */
+            background-color: #333; /* Dark Gray */
             color: white;
             text-align: center;
             padding: 1rem;
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -80,24 +139,55 @@
         <h1>SQUBE</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="home">
             <h2>Home</h2>
-            <p>Welcome to the home page. This Page for personal blogging.</p>
+            <p>Welcome to the home page. This is a page for personal blogging.</p>
+            
+            <!-- Blog Previews -->
+            <div class="blog-preview">
+                <h3>Blog Title 1</h3>
+                <p>This is a short preview of the first blog post. Click here to read more...</p>
+                <p class="writer">Written by: Writer 1</p>
+                <button class="like-button" onclick="likePost(1)">Like</button>
+                <span class="like-count" id="like-count-1">0</span>
+                <a href="blog1.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-preview">
+                <h3>Blog Title 2</h3>
+                <p>This is a short preview of the second blog post. Click here to read more...</p>
+                <p class="writer">Written by: Writer 2</p>
+                <button class="like-button" onclick="likePost(2)">Like</button>
+                <span class="like-count" id="like-count-2">0</span>
+                <a href="blog2.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-preview">
+                <h3>Blog Title 3</h3>
+                <p>This is a short preview of the third blog post. Click here to read more...</p>
+                <p class="writer">Written by: Writer 3</p>
+                <button class="like-button" onclick="likePost(3)">Like</button>
+                <span class="like-count" id="like-count-3">0</span>
+                <a href="blog3.html" class="read-more">Read More</a>
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 SQUBE</p>
     </footer>
     <script>
-        // Add any JavaScript functionality here
+        // JavaScript to handle like button click and update the count
+        function likePost(postId) {
+            const likeCountElement = document.getElementById('like-count-' + postId);
+            let currentCount = parseInt(likeCountElement.textContent);
+            likeCountElement.textContent = currentCount + 1;
+        }
+        
         console.log("Welcome to SQUBE!");
     </script>
 </body>
 </html>
-
-
