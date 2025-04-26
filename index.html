@@ -1,103 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQUBE</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff; /* Alice Blue */
-        }
-
-        header {
-            background-color: #c1ecc4; /* Green */
-            color: rgb(17, 17, 17);
-            padding: 1rem;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            color: rgb(8, 8, 8);
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: #cddbce;
-        }
-
-        main {
-            padding: 1rem;
-        }
-
-        section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background-color: #ffffff; /* White */
-            border-radius: 8px;
-        }
-
-        #home {
-            background-color: #a7d0ff; /* Light Green */
-        }
-
-        #about {
-            background-color: #ffe6e6; /* Light Red */
-        }
-
-        #contact {
-            background-color: #e6e6ff; /* Light Blue */
-        }
-
-        footer {
-            background-color: #6ab4df; /* Green */
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQUBE</title>
+  <link href="./src/output.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>SQUBE</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>Welcome to the home page. This Page for personal blogging.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 SQUBE</p>
-    </footer>
-    <script>
-        // Add any JavaScript functionality here
-        console.log("Welcome to SQUBE!");
-    </script>
+<body class="font-sans">
+  <header id="header-placeholder"></header>
+  
+
+  <!-- Content Section -->
+  <div class="pt-16">
+    <section id="home" >
+        <div class="bg-white py-6 sm:py-8 lg:py-12">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+               <div class="text-center">
+                    <h1 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">Welcome to SQUBE</h1>
+                    <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                        Sharing Experience and ideas
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="src/images/No screen2.png" alt="Blog Post 1" class="h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Technology</div>
+                        <h2 class="mt-2 text-xl font-semibold text-gray-900">Next Tech is No screen</h2>
+                        <p class="mt-3 text-base text-gray-500">
+                          When I first saw phones without keyboards, I thought they wouldn't work for people. Yet, they quickly replaced keypad phones entirely. Now, it feels like the next evolution will be phones without screens.
+                        </p>
+                        <div class="mt-4">
+                            <a href="./src/component/detailblog.html?topic" class="text-indigo-600 hover:text-indigo-500">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <img src="src/images/kettle.jpg" alt="Blog Post 1" class="h-48 object-cover">
+                  <div class="p-6">
+                      <div class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Product Review</div>
+                      <h2 class="mt-2 text-xl font-semibold text-gray-900">Kittle is my Travel partner</h2>
+                      <p class="mt-3 text-base text-gray-500">
+                        Traveling to colder destinations always requires thoughtful planning and packing. Among the most essential items I ve found indispensable during such trips is the electric kettle.
+                      </p>
+                      <div class="mt-4">
+                          <a href="./src/component/detailblog.html?kittle_t1"class="text-indigo-600 hover:text-indigo-500">Read more →</a>
+                      </div>
+                  </div>
+              </div>
+                
+            </div>
+        </div>
+       
+    </section>
+    <section id="product" class="h-screen bg-gray-200 flex items-center justify-center">
+      <h1 class="text-4xl font-bold">About Us</h1>
+    </section>
+    
+  </div>
+  <footer id="footer-placeholder" class="w-full"></footer>
+  <script>
+    // Function to fetch and insert components
+    async function loadComponent(url, elementId) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${url}: ${response.status}`);
+            }
+            const html = await response.text();
+            document.getElementById(elementId).innerHTML = html;
+            if (elementId === 'header-placeholder') {
+
+            const toggleButton = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const mobileMenuModal = document.getElementById('mobile-menu-modal');
+    const closeMenuButton = document.getElementById('close-menu');
+    const menuLinks = document.querySelectorAll('#mobile-menu-modal a');
+    if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      mobileMenuModal.classList.toggle('hidden');
+     // toggleButton.classList.toggle('hidden'); // Tailwind Utility class.
+
+    });
+  }
+  if (closeMenuButton) {
+    closeMenuButton.addEventListener('click', () => {
+      mobileMenuModal.classList.add('hidden');
+      //toggleButton.classList.toggle('hidden'); 
+    });
+  }
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuModal.classList.add('hidden');
+      });
+    
+    });
+  }
+        } catch (error) {
+            console.error(`Error loading component from ${url}:`, error);
+            document.getElementById(elementId).innerHTML = `<div class="bg-red-100 p-4">Failed to load component. Please refresh the page.</div>`;
+        }
+    }
+
+    // Load header and footer
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponent('./src/component/header.html', 'header-placeholder');
+        loadComponent('./src/component/footer.html', 'footer-placeholder');
+    });
+
+  
+</script>
 </body>
 </html>
-
-
