@@ -1,0 +1,21 @@
+{
+  "pageTitle": "Machine Washing",
+  "sections": [
+    {
+      "heading": "Machine Washing",
+      "paragraphs": [
+        "Ever wonder how washing powder gets your clothes clean? It's all thanks to the fascinating dance between polar and nonpolar molecules! Think of it this way: the nonpolar parts of the detergent latch onto greasy, oily dirt (which is also nonpolar). Then, the polar parts of the detergent grab onto the water (which is polar). When your washing machine agitates and spins, this dual action lifts the dirt away and suspends it in the water. As you rinse and the water drains, the dirt goes with it. This process is most efficient in front-loading washing machines, where gravity assists in the removal of the dirty water.",
+        "Energy Input: Washing machines provide the mechanical energy needed to facilitate the cleaning process. The rotating drum or agitator creates turbulence and shear forces in the water. This agitation helps the surfactant solution penetrate the fabric fibers, reach the dirt particles, and dislodge them. The movement also aids in the formation of micelles around the dirt. During the rinse cycles, the agitation helps to remove the dirty, surfactant-laden water from the fabric, ensuring that the loosened soil is carried away.",
+        "Top-loaders typically use an agitator or impeller in the center of the drum to create water movement. The washing action relies heavily on this mechanical force to lift and remove dirt. Gravity plays a role in draining the water, but the primary cleaning action is driven by the agitator.",
+        "Tumble the clothes through a smaller volume of water. The repeated lifting and falling action, combined with the detergent solution, provides effective cleaning. Gravity assists significantly in this process, as the tumbling motion ensures that the clothes are repeatedly immersed in and drained of the water.",
+        "Top-Load Washing Machines - Advantages: Generally less expensive upfront. Shorter wash cycles in some models. Easier to add clothes mid-cycle. Less prone to mold/mildew issues.",
+        "Top-Load Washing Machines - Disadvantages: Use more water and energy. Can be harsher on clothes. May not clean as effectively as front-loaders.",
+        "Front-Load Washing Machines - Advantages: More water and energy-efficient. Gentler on clothes. Often provide better cleaning performance. More efficient with detergent.",
+        "Front-Load Washing Machines - Disadvantages: More expensive upfront. Longer wash cycles. Can't easily add clothes mid-cycle."
+      ],
+      "imagePath": "../images/Washing machine.jpg",
+      "imageAlt": "Washing machine"
+    }
+  ]
+}
+

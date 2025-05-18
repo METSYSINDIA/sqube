@@ -1,14 +1,20 @@
 {
-  "pageTitle": "Next Tech is No screen",
+  "pageTitle": "My Simple Take on a New Smart Light",
   "sections": [
     {
-      "heading": "Next Tech is No screen",
+      "heading": "My Simple Take on a New Smart Light",
       "paragraphs": [
-        "When I first saw phones without keyboards, I thought they wouldn't work for people. Yet, they quickly replaced keypad phones entirely. Now, it feels like the next evolution will be phones without screens.Projectors appear to be the future of screens. While there’s still a long way to go to perfect the technology, the advancements are promising. For instance, when I saw a pocket-sized projector capable of displaying movies, it felt like a glimpse into the future. Imagine turning any space, whether a hotel room or your living room, into a theater-like experience anytime you want."
-        ,"When choosing a projector, there are several factors to keep in mind. Brightness, measured in lumens, determines how well the projector performs in different lighting conditions. Resolution, such as 1080p or 4K, is crucial for clear and sharp visuals. The contrast ratio also plays a key role in delivering vibrant images. Don’t forget to check connectivity options to ensure compatibility with your devices, as well as the type of light source—whether it’s a lamp, LED, or laser. Additionally, consider portability, mounting options, screen size, and throw distance to find the perfect fit for your setup. The future of screens is exciting, and projectors are a shining step in that direction."
-      ],
-      "imagePath": "../images/No Screen2.png",
-      "imageAlt": "No Screen2"
+  "I bought a new smart light, and it's pretty cool. The best part is how easy it is to use. I can just tell my phone or smart speaker to turn it on or off, or make it brighter or dimmer.",
+  "It's also fun to change the colors. I can make the room feel cozy with a warm light or bright for when I need to see things clearly. Sometimes I even change the color just for fun!",
+  "One good thing is that it uses less electricity than my old lights, so hopefully, my power bill will be a bit lower. Plus, they say these lights last a long time, so I won't have to change them as often.",
+  "But, it wasn't as simple as just screwing in a regular bulb. I had to download an app and connect it to my Wi-Fi. It took a little while to figure out.",
+  "Also, if my internet goes out, the smart features stop working. I can still turn it on and off with the regular switch, but I can't use my phone or voice to control it. That's a bit annoying.",
+  "These smart lights also cost more than regular bulbs. So, you have to think if the extra features are worth the extra money.",
+  "Sometimes, when I tell it to do something, it takes a second or two to respond. It's not a big deal, but it's not instant either.",
+  "Overall, I like this smart light. It's convenient and fun to use. But you need to have good Wi-Fi, and it costs more than a regular light bulb. If those things aren't a problem for you, then it's a nice upgrade for your home."
+],
+      "imagePath": "../images/light-bulb.jpg",
+      "imageAlt": "Light"
     }
     
       ]

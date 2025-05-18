@@ -1,43 +1,15 @@
 {
-  "pageTitle": "Kittle Review",
+  "pageTitle": "Next Tech is No screen",
   "sections": [
     {
-      "heading": "Introduction to Wildlife Conservation",
+      "heading": "Next Tech is No screen",
       "paragraphs": [
-        "Kittle conservation is the practice of protecting wild species and their habitats to maintain healthy wildlife populations and ecosystems.",
-        "Modern conservation efforts began in the early 20th century as a response to rapidly declining wildlife populations due to human activities."
+        "When I first saw phones without keyboards, I thought they wouldn't work for people. Yet, they quickly replaced keypad phones entirely. Now, it feels like the next evolution will be phones without screens.Projectors appear to be the future of screens. While there’s still a long way to go to perfect the technology, the advancements are promising. For instance, when I saw a pocket-sized projector capable of displaying movies, it felt like a glimpse into the future. Imagine turning any space, whether a hotel room or your living room, into a theater-like experience anytime you want."
+        ,"When choosing a projector, there are several factors to keep in mind. Brightness, measured in lumens, determines how well the projector performs in different lighting conditions. Resolution, such as 1080p or 4K, is crucial for clear and sharp visuals. The contrast ratio also plays a key role in delivering vibrant images. Don’t forget to check connectivity options to ensure compatibility with your devices, as well as the type of light source—whether it’s a lamp, LED, or laser. Additionally, consider portability, mounting options, screen size, and throw distance to find the perfect fit for your setup. The future of screens is exciting, and projectors are a shining step in that direction."
       ],
-      "imagePath": "../images/Img_1.jpg",
-      "imageAlt": "Wildlife conservation ranger monitoring animals in natural habitat"
-    },
-    {
-      "heading": "Endangered Species Protection",
-      "paragraphs": [
-        "Currently, the IUCN Red List includes over 40,000 species threatened with extinction, representing 28% of all assessed species.",
-        "Conservation strategies for endangered species include habitat preservation, captive breeding programs, and anti-poaching initiatives.",
-        "Success stories like the American bison and the bald eagle demonstrate that concerted conservation efforts can bring species back from the brink of extinction."
-      ],
-      "imagePath": "../images/Img_2.jpg",
-      "imageAlt": "Endangered Sumatran tiger in protected reserve"
-    },
-    {
-      "heading": "Habitat Preservation",
-      "paragraphs": [
-        "Habitat loss is the primary threat to biodiversity worldwide, with an estimated 18 million acres of forest lost annually.",
-        "Protected areas, wildlife corridors, and sustainable land management practices are essential tools for habitat preservation."
-      ],
-      "imagePath": "../images/Img_1.jpg",
-      "imageAlt": "Aerial view of protected rainforest habitat"
-    },
-    {
-      "heading": "Community-Based Conservation",
-      "paragraphs": [
-        "Engaging local communities is crucial for the success of conservation initiatives, as they often depend on natural resources for their livelihoods.",
-        "Community-based conservation approaches combine biodiversity protection with sustainable development and social equity.",
-        "Examples include community-managed forests, sustainable tourism initiatives, and benefit-sharing mechanisms."
-      ],
-      "imagePath": "../images/Img_1.jpg",
-      "imageAlt": "Local community members participating in conservation project"
+      "imagePath": "../images/No Screen2.png",
+      "imageAlt": "No Screen2"
     }
-  ]
+    
+      ]
 }
