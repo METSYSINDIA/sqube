@@ -17,7 +17,7 @@
         "A Hard Disk Drive (HDD) is a traditional storage device that uses spinning magnetic disks—called platters—to store and retrieve digital data. First introduced in the 1950s, HDDs have undergone significant transformations over the decades, becoming smaller, faster, and more affordable, while dramatically increasing in storage capacity.Each HDD contains one or more platters coated with magnetic material, a spindle that rotates the platters at high speeds (commonly 5400 or 7200 RPM), and a read/write arm that accesses the data. The movement of this arm is guided by an actuator, enabling precision in reading and writing data on the disk."
       ],
       "imagePath": "../images/harddisk2.jpeg",
-      "imageAlt": "Benefits of dishwashers"
+      "imageAlt": "harddisk"
     },
     {
       "heading": "Key Features and Specifications",
@@ -28,7 +28,7 @@
         "Interface Type: Most consumer HDDs use the SATA interface; enterprise or performance HDDs may use SAS.",
         "Form Factor: 3.5-inch drives are standard for desktops; 2.5-inch drives are common in laptops and external enclosures."
       ],
-      "imagePath": "../images/harddisk.png",
+      "imagePath": "../images/Harddisk.png",
       "imageAlt": "Harddisk"
     },
     {
