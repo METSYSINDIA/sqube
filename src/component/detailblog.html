@@ -6,258 +6,176 @@
   <title>SQUBE</title>
   <link href="../output.css" rel="stylesheet">
   <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
+    /* Only keep minimal custom CSS for animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
     }
-    .main-title {
-        text-align: center;
-        margin-bottom: 30px;
-        color: #2c3e50;
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .loading {
-        text-align: center;
-        font-size: 24px;
-        margin: 50px 0;
-    }
-    .section {
-        margin-bottom: 40px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    .section-heading {
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-    }
-    .section-content {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .section-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    @media (min-width: 768px) {
-        .section-content {
-            flex-direction: row;
-        }
-        .section-text {
-            flex: 1;
-        }
-        .section-image-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-    }
-    .error-message {
-        color: #e74c3c;
-        text-align: center;
-        padding: 20px;
-        border: 1px solid #e74c3c;
-        border-radius: 5px;
-    }
-</style>
+  </style>
 </head>
-<body class="font-sans">
+<body class="bg-gradient-to-br from-blue-50 to-white min-h-screen font-sans text-gray-800">
   <header id="header-placeholder"></header>
-  
-    
-
+  <main class="max-w-4xl mx-auto px-4 py-8">
     <div id="content">
-        <div class="loading">Loading content...</div>
+      <div class="flex flex-col items-center justify-center min-h-[300px]">
+        <svg class="animate-spin h-10 w-10 text-blue-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+        <span class="text-lg font-medium text-blue-600">Loading content...</span>
+      </div>
     </div>
-    <footer id="footer-placeholder" class="w-full"></footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Function to load the JSON data
-            async function loadContent() {
-                try {
-                    // In a real application, you would fetch from an actual JSON file or API
-                    // const response = await fetch('content.json');
-                    // const data = await response.json();
-                    
-                    // For demo purposes, we'll use the hardcoded JSON data
-                    const urlParams = new URLSearchParams(window.location.search);
-                    
-                    const response = await fetch('../meterial/'+urlParams.toString().slice(0,-1)+'.json');
-                    const data = await response.json();
-                    renderContent(data);
-                } catch (error) {
-                    console.error('Error loading content:', error);
-                    document.getElementById('content').innerHTML = `
-                        <div class="error-message">
-                            <h2>Error Loading Content</h2>
-                            <p>Sorry, we couldn't load the content. Please try again later.</p>
-                        </div>
-                    `;
-                }
-            }
+  </main>
+  <footer id="footer-placeholder" class="w-full"></footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      async function loadContent() {
+        try {
+          const urlParams = new URLSearchParams(window.location.search);
+          const response = await fetch('../meterial/' + urlParams.toString().slice(0,-1) + '.json');
+          const data = await response.json();
+          renderContent(data);
+        } catch (error) {
+          console.error('Error loading content:', error);
+          document.getElementById('content').innerHTML = `
+            <div class="flex flex-col items-center justify-center min-h-[300px]">
+              <svg class="h-10 w-10 text-red-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              <h2 class="text-xl font-semibold text-red-600 mb-2">Error Loading Content</h2>
+              <p class="text-gray-600">Sorry, we couldn't load the content. Please try again later.</p>
+            </div>
+          `;
+        }
+      }
 
-            // Function to render the content from JSON data
-            function renderContent(data) {
-                const contentElement = document.getElementById('content');
-                
-                // Clear loading message
-                contentElement.innerHTML = '';
-                
-                // Add page title
-                const titleElement = document.createElement('h1');
-                titleElement.className = 'main-title';
-                titleElement.textContent = data.pageTitle;
-                contentElement.appendChild(titleElement);
-                
-                // Loop through each section and create elements
-                data.sections.forEach((section, index) => {
-                    const sectionElement = document.createElement('section');
-                    sectionElement.className = 'section';
-                    sectionElement.dataset.index = index;
-                    
-                    // Create heading
-                    const headingElement = document.createElement('h2');
-                    headingElement.className = 'section-heading';
-                    headingElement.textContent = section.heading;
-                    sectionElement.appendChild(headingElement);
-                    
-                    // Create content container
-                    const contentContainer = document.createElement('div');
-                    contentContainer.className = 'section-content';
-                    
-                    // Create paragraphs container
-                    const textContainer = document.createElement('div');
-                    textContainer.className = 'section-text';
-                    
-                    // Add paragraphs
-                    section.paragraphs.forEach(paragraph => {
-                        const paragraphElement = document.createElement('p');
-                        paragraphElement.textContent = paragraph;
-                        textContainer.appendChild(paragraphElement);
-                    });
-                    
-                    // Create image container
-                    const imageContainer = document.createElement('div');
-                    imageContainer.className = 'section-image-container';
-                    
-                    // Create image (using placeholder for demo)
-                    const imageElement = document.createElement('img');
-                    imageElement.className = 'section-image';
-                    // For demonstration, using a placeholder image
-                    imageElement.src = section.imagePath.startsWith('/images/') 
-                        ? `/api/placeholder/600/400` 
-                        : section.imagePath;
-                    imageElement.alt = section.imageAlt;
-                    imageContainer.appendChild(imageElement);
-                    
-                    // Add text and image to content container
-                    contentContainer.appendChild(textContainer);
-                    contentContainer.appendChild(imageContainer);
-                    
-                    // Add content container to section
-                    sectionElement.appendChild(contentContainer);
-                    
-                    // Add section to page
-                    contentElement.appendChild(sectionElement);
-                });
-                
-                // Add scroll animation
-                setTimeout(() => {
-                    observeSections();
-                }, 100);
-            }
-            
-            // Function to observe sections and animate them as they come into view
-            function observeSections() {
-                const sections = document.querySelectorAll('.section');
-                
-                // If IntersectionObserver is supported
-                if ('IntersectionObserver' in window) {
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('visible');
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0.2 });
-                    
-                    sections.forEach(section => {
-                        observer.observe(section);
-                    });
-                } else {
-                    // Fallback for browsers that don't support IntersectionObserver
-                    sections.forEach(section => {
-                        section.classList.add('visible');
-                    });
-                }
-            }
-            
-            // Start loading content with a small delay to show the loading state
-            setTimeout(loadContent, 1000);
+      function renderContent(data) {
+        const contentElement = document.getElementById('content');
+        contentElement.innerHTML = '';
+
+        // Page Title
+        const titleElement = document.createElement('h1');
+        titleElement.className = 'text-4xl md:text-5xl font-extrabold text-center text-blue-700 mb-10 drop-shadow-sm';
+        titleElement.textContent = data.pageTitle;
+        contentElement.appendChild(titleElement);
+
+        // Sections
+        data.sections.forEach((section, index) => {
+          const sectionElement = document.createElement('section');
+          sectionElement.className = 'fade-in mb-12 bg-white/80 rounded-2xl shadow-lg overflow-hidden';
+          sectionElement.dataset.index = index;
+
+          // Section Heading
+          const headingElement = document.createElement('h2');
+          headingElement.className = 'text-2xl md:text-3xl font-bold text-blue-600 px-8 pt-8 pb-2 border-b border-blue-100';
+          headingElement.textContent = section.heading;
+          sectionElement.appendChild(headingElement);
+
+          // Content Container
+          const contentContainer = document.createElement('div');
+          contentContainer.className = 'flex flex-col md:flex-row gap-8 p-8';
+
+          // Text
+          const textContainer = document.createElement('div');
+          textContainer.className = 'flex-1 space-y-4 text-lg';
+          section.paragraphs.forEach(paragraph => {
+            const paragraphElement = document.createElement('p');
+            paragraphElement.textContent = paragraph;
+            paragraphElement.className = 'leading-relaxed';
+            textContainer.appendChild(paragraphElement);
+          });
+
+          // Image
+          const imageContainer = document.createElement('div');
+          imageContainer.className = 'flex-1 flex items-start justify-center';
+          const imageElement = document.createElement('img');
+          imageElement.className = 'rounded-xl shadow-md max-w-full h-auto border border-blue-100';
+          imageElement.src = section.imagePath.startsWith('/images/') 
+            ? `/api/placeholder/600/400` 
+            : section.imagePath;
+          imageElement.alt = section.imageAlt;
+          imageContainer.appendChild(imageElement);
+
+          // Add to content container
+          contentContainer.appendChild(imageContainer);
+          contentContainer.appendChild(textContainer);
+          
+
+          // Add content to section
+          sectionElement.appendChild(contentContainer);
+          contentElement.appendChild(sectionElement);
         });
 
-         // Function to fetch and insert components
-    async function loadComponent(url, elementId) {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Failed to fetch ${url}: ${response.status}`);
-            }
-            const html = await response.text();
-            document.getElementById(elementId).innerHTML = html;
-            if (elementId === 'header-placeholder') {
+        // Animate sections
+        setTimeout(() => {
+          observeSections();
+        }, 100);
+      }
 
-            const toggleButton = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    const mobileMenuModal = document.getElementById('mobile-menu-modal');
-    const closeMenuButton = document.getElementById('close-menu');
-    const menuLinks = document.querySelectorAll('#mobile-menu-modal a');
-    if (toggleButton) {
-    toggleButton.addEventListener('click', () => {
-      mobileMenuModal.classList.toggle('hidden');
-     // toggleButton.classList.toggle('hidden'); // Tailwind Utility class.
-
-    });
-  }
-  if (closeMenuButton) {
-    closeMenuButton.addEventListener('click', () => {
-      mobileMenuModal.classList.add('hidden');
-      //toggleButton.classList.toggle('hidden'); 
-    });
-  }
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuModal.classList.add('hidden');
-      });
-    
-    });
-  }
-        } catch (error) {
-            console.error(`Error loading component from ${url}:`, error);
-            document.getElementById(elementId).innerHTML = `<div class="bg-red-100 p-4">Failed to load component. Please refresh the page.</div>`;
+      function observeSections() {
+        const sections = document.querySelectorAll('.fade-in');
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.2 });
+          sections.forEach(section => {
+            observer.observe(section);
+          });
+        } else {
+          sections.forEach(section => {
+            section.classList.add('visible');
+          });
         }
-    }
+      }
 
-    // Load header and footer
-    document.addEventListener('DOMContentLoaded', () => {
-        loadComponent('header.html', 'header-placeholder');
-        loadComponent('footer.html', 'footer-placeholder');
+      setTimeout(loadContent, 800);
     });
 
-    </script>
-    </body>
-    </html>
+    // Header/Footer loader (unchanged)
+    async function loadComponent(url, elementId) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${url}: ${response.status}`);
+        }
+        const html = await response.text();
+        document.getElementById(elementId).innerHTML = html;
+        if (elementId === 'header-placeholder') {
+          const toggleButton = document.getElementById('menu-toggle');
+          const menu = document.getElementById('menu');
+          const mobileMenuModal = document.getElementById('mobile-menu-modal');
+          const closeMenuButton = document.getElementById('close-menu');
+          const menuLinks = document.querySelectorAll('#mobile-menu-modal a');
+          if (toggleButton) {
+            toggleButton.addEventListener('click', () => {
+              mobileMenuModal.classList.toggle('hidden');
+            });
+          }
+          if (closeMenuButton) {
+            closeMenuButton.addEventListener('click', () => {
+              mobileMenuModal.classList.add('hidden');
+            });
+          }
+          menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              mobileMenuModal.classList.add('hidden');
+            });
+          });
+        }
+      } catch (error) {
+        console.error(`Error loading component from ${url}:`, error);
+        document.getElementById(elementId).innerHTML = `<div class="bg-red-100 p-4">Failed to load component. Please refresh the page.</div>`;
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      loadComponent('header.html', 'header-placeholder');
+      loadComponent('footer.html', 'footer-placeholder');
+    });
+  </script>
+</body>
+</html>
