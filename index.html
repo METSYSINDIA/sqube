@@ -36,11 +36,18 @@
     .card {
       border: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    a.text-reset:hover .card,
+    a.text-reset:focus .card {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.13);
+      transform: translateY(-7px);
     }
 
     .card-img-top {
@@ -100,78 +107,84 @@
 
       <!-- Blog Post 1 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <article class="card h-100">
-          <img src="src/images/Noscreen2.png" class="card-img-top" alt="Next Tech is No Screen">
-          <div class="card-body d-flex flex-column">
-            <small class="text-uppercase text-muted fw-semibold">Technology</small>
-            <h5 class="card-title mt-2">Next Tech is No Screen</h5>
-            <p class="card-text">Phones without screens could be the next evolution in tech.</p>
-            <a href="./src/component/detailblog.html?no_screen" class="mt-auto text-primary fw-semibold text-decoration-none">Read more →</a>
-          </div>
-        </article>
+        <a href="./src/component/detailblog.html?no_screen" class="text-decoration-none text-reset">
+          <article class="card h-100">
+            <img src="src/images/Noscreen2.png" class="card-img-top" alt="Next Tech is No Screen">
+            <div class="card-body d-flex flex-column">
+              <small class="text-uppercase text-muted fw-semibold">Technology</small>
+              <h5 class="card-title mt-2">Next Tech is No Screen</h5>
+              <p class="card-text">Phones without screens could be the next evolution in tech.</p>
+            </div>
+          </article>
+        </a>
       </div>
 
       <!-- Blog Post 2 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <article class="card h-100">
-          <img src="src/images/kettle.jpg" class="card-img-top" alt="Kettle is my Travel Partner">
-          <div class="card-body d-flex flex-column">
-            <small class="text-uppercase text-muted fw-semibold">Product Review</small>
-            <h5 class="card-title mt-2">Kettle is my Travel Partner</h5>
-            <p class="card-text">An electric kettle is essential on cold travels. Here's why.</p>
-            <a href="./src/component/detailblog.html?kettle_travel" class="mt-auto text-primary fw-semibold text-decoration-none">Read more →</a>
-          </div>
-        </article>
+        <a href="./src/component/detailblog.html?kettle_travel" class="text-decoration-none text-reset">
+          <article class="card h-100">
+            <img src="src/images/kettle.jpg" class="card-img-top" alt="Kettle is my Travel Partner">
+            <div class="card-body d-flex flex-column">
+              <small class="text-uppercase text-muted fw-semibold">Product Review</small>
+              <h5 class="card-title mt-2">Kettle is my Travel Partner</h5>
+              <p class="card-text">An electric kettle is essential on cold travels. Here's why.</p>
+            </div>
+          </article>
+        </a>
       </div>
 
       <!-- Blog Post 3 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <article class="card h-100">
-          <img src="src/images/light-bulb.jpg" class="card-img-top" alt="Another Kettle Post">
-          <div class="card-body d-flex flex-column">
-            <small class="text-uppercase text-muted fw-semibold">Lifestyle</small>
-            <h5 class="card-title mt-2">My Simple Take on a New Smart Light</h5>
-            <p class="card-text">I bought a new smart light, and it's pretty cool. The best part is how easy it is to use.</p>
-            <a href="./src/component/detailblog.html?topic" class="mt-auto text-primary fw-semibold text-decoration-none">Read more →</a>
-          </div>
-        </article>
+        <a href="./src/component/detailblog.html?topic" class="text-decoration-none text-reset">
+          <article class="card h-100">
+            <img src="src/images/light-bulb.jpg" class="card-img-top" alt="Another Kettle Post">
+            <div class="card-body d-flex flex-column">
+              <small class="text-uppercase text-muted fw-semibold">Lifestyle</small>
+              <h5 class="card-title mt-2">My Simple Take on a New Smart Light</h5>
+              <p class="card-text">I bought a new smart light, and it's pretty cool. The best part is how easy it is to use.</p>
+            </div>
+          </article>
+        </a>
       </div>
 
       <!-- Blog Post 4 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <article class="card h-100">
-          <img src="src/images/Washing machine.jpg" class="card-img-top" alt="Tech Future Without Screens">
-          <div class="card-body d-flex flex-column">
-            <small class="text-uppercase text-muted fw-semibold">Product review</small>
-            <h5 class="card-title mt-2">Spinning  machine</h5>
-            <p class="card-text">Ever wonder how washing powder gets your clothes clean? It's all thanks to the fascinating dance between polar and nonpolar molecules!.</p>
-            <a href="./src/component/detailblog.html?future_ui" class="mt-auto text-primary fw-semibold text-decoration-none">Read more →</a>
-          </div>
-        </article>
+        <a href="./src/component/detailblog.html?future_ui" class="text-decoration-none text-reset">
+          <article class="card h-100">
+            <img src="src/images/Washing machine.jpg" class="card-img-top" alt="Tech Future Without Screens">
+            <div class="card-body d-flex flex-column">
+              <small class="text-uppercase text-muted fw-semibold">Product review</small>
+              <h5 class="card-title mt-2">Spinning  machine</h5>
+              <p class="card-text">Ever wonder how washing powder gets your clothes clean? It's all thanks to the fascinating dance between polar and nonpolar molecules!.</p>
+            </div>
+          </article>
+        </a>
       </div>
 <!-- Blog Post 5 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <article class="card h-100">
-          <img src="src/images/Dishwahser1.jpg" class="card-img-top" alt="Tech Future Without Screens">
-          <div class="card-body d-flex flex-column">
-            <small class="text-uppercase text-muted fw-semibold">Product review</small>
-            <h5 class="card-title mt-2">bachelor Best friend</h5>
-            <p class="card-text">Conquer the Kitchen Chaos: Why a Dishwasher Could Be Your New Best Friend</p>
-            <a href="./src/component/detailblog.html?Dishwaher" class="mt-auto text-primary fw-semibold text-decoration-none">Read more →</a>
-          </div>
-        </article>
+        <a href="./src/component/detailblog.html?Dishwaher" class="text-decoration-none text-reset">
+          <article class="card h-100">
+            <img src="src/images/Dishwahser1.jpg" class="card-img-top" alt="Tech Future Without Screens">
+            <div class="card-body d-flex flex-column">
+              <small class="text-uppercase text-muted fw-semibold">Product review</small>
+              <h5 class="card-title mt-2">bachelor Best friend</h5>
+              <p class="card-text">Conquer the Kitchen Chaos: Why a Dishwasher Could Be Your New Best Friend</p>
+            </div>
+          </article>
+        </a>
       </div>
 <!-- Blog Post 6 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <article class="card h-100">
-          <img src="src/images/harddisk3.jpeg" class="card-img-top" alt="Tech Future Without Screens">
-          <div class="card-body d-flex flex-column">
-            <small class="text-uppercase text-muted fw-semibold">Product review</small>
-            <h5 class="card-title mt-2">Everything You Need to Know About Hard Disk Drives</h5>
-            <p class="card-text">Everything You Need to Know About Hard Disk Drives</p>
-            <a href="./src/component/detailblog.html?harddisk" class="mt-auto text-primary fw-semibold text-decoration-none">Read more →</a>
-          </div>
-        </article>
+        <a href="./src/component/detailblog.html?harddisk" class="text-decoration-none text-reset">
+          <article class="card h-100">
+            <img src="src/images/harddisk3.jpeg" class="card-img-top" alt="Tech Future Without Screens">
+            <div class="card-body d-flex flex-column">
+              <small class="text-uppercase text-muted fw-semibold">Product review</small>
+              <h5 class="card-title mt-2">Everything You Need to Know About Hard Disk Drives</h5>
+              <p class="card-text">Everything You Need to Know About Hard Disk Drives</p>
+            </div>
+          </article>
+        </a>
       </div>
       <!-- More blog cards can be added similarly -->
 

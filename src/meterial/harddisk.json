@@ -4,10 +4,9 @@
     {
       "heading": "Everything You Need to Know About Hard Disk Drives",
       "paragraphs": [
-        "In today’s digital world, data storage is not just a luxury—it's a necessity. Whether you are a casual user storing personal photos, a business backing up essential records, or a gamer with vast libraries of content, choosing the right storage solution can have a profound impact on your computing experience. One of the most time-tested and reliable storage technologies available is the Hard Disk Drive (HDD).",
-          "A Hard Disk Drive (HDD) is a traditional storage device that uses spinning magnetic disks—called platters—to store and retrieve digital data. First introduced in the 1950s, HDDs have undergone significant transformations over the decades, becoming smaller, faster, and more affordable, while dramatically increasing in storage capacity.Each HDD contains one or more platters coated with magnetic material, a spindle that rotates the platters at high speeds (commonly 5400 or 7200 RPM), and a read/write arm that accesses the data. The movement of this arm is guided by an actuator, enabling precision in reading and writing data on the disk."
+        "In today’s digital world, data storage is not just a luxury—it's a necessity. Whether you are a casual user storing personal photos, a business backing up essential records, or a gamer with vast libraries of content, choosing the right storage solution can have a profound impact on your computing experience. One of the most time-tested and reliable storage technologies available is the Hard Disk Drive (HDD)."
       ],
-      "imagePath": "Harddisk.png",
+      "imagePath": "../images/harddisk4.jpeg",
       "imageAlt": "harddisk"
       
 
