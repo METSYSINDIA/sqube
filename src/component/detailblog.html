@@ -153,19 +153,20 @@
                     const contentContainer = document.createElement('div');
                     contentContainer.className = 'section-content';
                     
-                    // Create image container
-                    const imageContainer = document.createElement('div');
-                    imageContainer.className = 'section-image-container';
-                    
-                    // Create image (using placeholder for demo)
-                    const imageElement = document.createElement('img');
-                    imageElement.className = 'section-image';
-                    // For demonstration, using a placeholder image
-                    imageElement.src = section.imagePath.startsWith('/images/') 
-                        ? `/api/placeholder/600/400` 
-                        : section.imagePath;
-                    imageElement.alt = section.imageAlt;
-                    imageContainer.appendChild(imageElement);
+                    // Create image container only if imagePath is not null
+                    let imageContainer = null;
+                    if (section.imagePath) {
+                        imageContainer = document.createElement('div');
+                        imageContainer.className = 'section-image-container';
+                        const imageElement = document.createElement('img');
+                        imageElement.className = 'section-image';
+                        imageElement.src = section.imagePath.startsWith('/images/') 
+                            ? `/api/placeholder/600/400` 
+                            : section.imagePath;
+                        imageElement.alt = section.imageAlt;
+                        imageContainer.appendChild(imageElement);
+                        contentContainer.appendChild(imageContainer);
+                    }
                     
                     // Create paragraphs container
                     const textContainer = document.createElement('div');
@@ -179,7 +180,6 @@
                     });
                     
                     // Add image and text to content container (image left, text right)
-                    contentContainer.appendChild(imageContainer);
                     contentContainer.appendChild(textContainer);
                     
                     // Add content container to section
