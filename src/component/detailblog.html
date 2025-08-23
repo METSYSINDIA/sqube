@@ -13,10 +13,11 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
+        background-color: #f8f9fa;
     }
     .main-title {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         margin-top: 65px; 
         color: #2c3e50;
         font-size: 2.8rem;
@@ -53,28 +54,21 @@
     }
     .section-image {
         display: block;
-        width: 600px;
-        height: 400px;
+        width: 500px;
+        height: 350px;
         object-fit: cover;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        margin-left: auto;
-        margin-right: auto;
-    }
-    @media (min-width: 768px) {
-        .section-content {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-    .section-image-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 0 auto 30px auto;
     }
     .section-text {
-        flex: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+    .section-text p {
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.8;
     }
     .error-message {
         color: #e74c3c;
@@ -87,7 +81,21 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-</style>
+    /* SQUBE Brand Styling - Same as index page */
+    .navbar-brand {
+        font-weight: bold;
+        color: #0d6efd !important;
+    }
+    .navbar-brand:hover {
+        color: #0a58ca !important;
+    }
+    .text-primary {
+        color: #0d6efd !important;
+    }
+    .hover\:text-primary:hover {
+        color: #0a58ca !important;
+    }
+  </style>
 </head>
 <body class="font-sans">
   <header id="header-placeholder"></header>
@@ -154,18 +162,14 @@
                     contentContainer.className = 'section-content';
                     
                     // Create image container only if imagePath is not null
-                    let imageContainer = null;
                     if (section.imagePath) {
-                        imageContainer = document.createElement('div');
-                        imageContainer.className = 'section-image-container';
                         const imageElement = document.createElement('img');
                         imageElement.className = 'section-image';
                         imageElement.src = section.imagePath.startsWith('/images/') 
-                            ? `/api/placeholder/600/400` 
+                            ? `/api/placeholder/500/350` 
                             : section.imagePath;
                         imageElement.alt = section.imageAlt;
-                        imageContainer.appendChild(imageElement);
-                        contentContainer.appendChild(imageContainer);
+                        contentContainer.appendChild(imageElement);
                     }
                     
                     // Create paragraphs container
@@ -179,7 +183,7 @@
                         textContainer.appendChild(paragraphElement);
                     });
                     
-                    // Add image and text to content container (image left, text right)
+                    // Add text container to content container
                     contentContainer.appendChild(textContainer);
                     
                     // Add content container to section
@@ -249,7 +253,7 @@
     });
   }
   if (closeMenuButton) {
-    closeMenuButton.addEventListener('click', () => {
+    toggleButton.addEventListener('click', () => {
       mobileMenuModal.classList.add('hidden');
       //toggleButton.classList.toggle('hidden'); 
     });

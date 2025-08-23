@@ -1,39 +1,36 @@
 <!-- Fixed Responsive Menu -->
-<nav class="fixed top-0 left-0 w-full h-15 bg-menubar-600 text-white shadow-lg z-50" style="background-color:#78bd9a;">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
-      <div class="text-lg font-bold"><a href="/index.html" class="hover:text-gray-500">SQUBE</a></div>
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="text-2xl font-bold">
+        <a href="/index.html" class="text-primary hover:text-blue-700 transition-colors duration-200">SQUBE</a>
+      </div>
+      
       <!-- Hamburger Menu for Mobile -->
-      <button class="block lg:hidden focus:outline-none" id="menu-toggle">
+      <button class="block lg:hidden focus:outline-none text-gray-700 hover:text-primary" id="menu-toggle">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
-      <!-- Menu Links -->
-      <ul class="hidden lg:flex space-x-6" id="menu">
-        <li><a href="/index.html" class="hover:text-gray-500">Home</a></li>
-        <li><a href="#product" class="hover:text-gray-300">About</a></li>
-       
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu Modal -->
-  <div id="mobile-menu-modal" class="hidden fixed inset-0 flex items-center justify-end  bg-opacity-50  lg:hidden z-50">
-    <div class="w-3/4 h-full rounded-l-lg p-4 absolute top-0 right-0" style="background-color:#78bd9a;">
-  
-      <button class="absolute top-4 right-4 focus:outline-none" id="close-menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-      <ul class="flex flex-col space-y-4">
-        <li ><a href="/index.html" class="text-blue-600 hover:text-blue-800 p-8">Home</a></li>
-        <li ><a href="#product" class="text-blue-600 hover:text-blue-800">About</a></li>
-        
+      
+      <!-- Menu Links - Only Home -->
+      <ul class="hidden lg:flex space-x-8" id="menu">
+        <li><a href="/index.html" class="text-gray-700 hover:text-primary transition-colors duration-200">Home</a></li>
       </ul>
     </div>
   </div>
-  <!-- JavaScript for Toggle Menu -->
-  <script>
-   
-  </script>
+</nav>
+
+<!-- Mobile Menu Modal -->
+<div id="mobile-menu-modal" class="hidden fixed inset-0 flex items-center justify-end bg-black bg-opacity-50 lg:hidden z-50">
+  <div class="w-3/4 h-full bg-white rounded-l-lg p-4 absolute top-0 right-0">
+    <button class="absolute top-4 right-4 focus:outline-none text-gray-700 hover:text-primary" id="close-menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <ul class="flex flex-col space-y-4 mt-16">
+      <li><a href="/index.html" class="text-gray-700 hover:text-primary p-4 block transition-colors duration-200">Home</a></li>
+    </ul>
+  </div>
+</div>
