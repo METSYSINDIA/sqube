@@ -95,6 +95,70 @@
     .hover\:text-primary:hover {
         color: #0a58ca !important;
     }
+    <!-- affliated market >
+        :root{
+}
+
+
+.aff-body{
+flex:1 1 auto;
+min-width:0;
+}
+
+
+.aff-title{
+font-size:15px;
+font-weight:600;
+margin:0 0 4px 0;
+color:#0f172a;
+line-height:1.2;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+
+.aff-sub{
+margin:0;
+font-size:13px;
+color:var(--muted);
+}
+
+
+.aff-actions{
+display:flex;
+gap:8px;
+align-items:center;
+flex-direction:column;
+margin-left:12px;
+}
+
+
+.buy-btn{
+appearance:none;
+border:0;
+background:#07cd84;
+color:white;
+font-weight:600;
+padding:10px 14px;
+border-radius:10px;
+cursor:pointer;
+box-shadow:0 6px 12px rgba(16,185,129,0.14);
+text-decoration:none;
+display:inline-flex;
+gap:8px;
+align-items:center;
+justify-content:center;
+min-width:96px;
+}
+
+
+.price{
+font-weight:700;
+color:#0f172a;
+font-size:14px;
+}
+
   </style>
 </head>
 <body class="font-sans">
@@ -131,7 +195,70 @@
                     `;
                 }
             }
+            function createAff(contentContainer,section){
+                                    
+                    // Create the affiliate card element
+                    const card = document.createElement('a');
+                    card.className = 'aff-card';
+                    card.href = section.affliated;
+                    card.target = '_blank';
+                    card.rel = 'noopener noreferrer nofollow';
 
+                    // Logo
+                    const logoDiv = document.createElement('div');
+                    logoDiv.className = 'aff-logo';
+                    logoDiv.setAttribute('aria-hidden', 'true');
+
+                    const logoImg = document.createElement('img');
+                    logoImg.width = 44;
+                    logoImg.height = 44;
+                    logoImg.src = '../images/logo2_merchant_amazon.png'; // <-- Replace with your Amazon logo URL
+                    logoImg.alt = 'amazon logo';
+
+                    logoDiv.appendChild(logoImg);
+
+                    // Body
+                    const bodyDiv = document.createElement('div');
+                    bodyDiv.className = 'aff-body';
+
+                    const title = document.createElement('h3');
+                    title.className = 'aff-title';
+                    title.textContent = section.affliatedHeading;
+
+                    const sub = document.createElement('p');
+                    sub.className = 'aff-sub';
+                    sub.textContent = 'Official store · Usually dispatched within 1–2 days';
+
+                    bodyDiv.appendChild(title);
+                    bodyDiv.appendChild(sub);
+
+                    // Actions
+                    const actionsDiv = document.createElement('div');
+                    actionsDiv.className = 'aff-actions';
+                    actionsDiv.setAttribute('aria-hidden', 'false');
+
+                     
+                    const buyWrap = document.createElement('span');
+                    buyWrap.className = 'buy-wrap';
+
+                    const buyBtn = document.createElement('span');
+                    buyBtn.className = 'buy-btn';
+                    buyBtn.setAttribute('role', 'button');
+                    buyBtn.setAttribute('aria-hidden', 'true');
+                    buyBtn.textContent = 'Buy';
+
+                    buyWrap.appendChild(buyBtn);
+                    ///actionsDiv.appendChild(price);
+                    actionsDiv.appendChild(buyWrap);
+
+                    // Combine parts
+                    card.appendChild(logoDiv);
+                    card.appendChild(bodyDiv);
+                    card.appendChild(actionsDiv);
+
+                    // Finally append to your container
+                    contentContainer.appendChild(card);
+            }
             // Function to render the content from JSON data
             function renderContent(data) {
                 const contentElement = document.getElementById('content');
@@ -171,6 +298,11 @@
                         imageElement.alt = section.imageAlt;
                         contentContainer.appendChild(imageElement);
                     }
+                    
+                    if(section.affliated){
+                            createAff(contentContainer,section);
+
+                    }             
                     
                     // Create paragraphs container
                     const textContainer = document.createElement('div');

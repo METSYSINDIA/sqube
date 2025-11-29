@@ -8,7 +8,9 @@
         "Alexa is available on a wide range of devices, including Amazon Echo smart speakers, Fire TV, and even third-party products. Its ability to understand natural language and respond conversationally has made it a household name, especially as smart homes become more common."
       ],
       "imagePath": "../images/alexa1.jpg",
-      "imageAlt": "Amazon Alexa Echo device on a table"
+      "imageAlt": "Amazon Alexa Echo device on a table",
+      "affliated":"https://www.amazon.com/Amazon-release-vibrant-helpful-routines/dp/B09B94RL1R/ref=sr_1_7_ffob_sspa?crid=2W6SNQLHG6JYZ&dib=eyJ2IjoiMSJ9.pEqr2IIouGJzUPCrQYcWNMEiRS2-2IFBU3fAGCD8VdH-vmZ43TlZjFURpxbyrWeQsqQcWXmOV9eflYE3esMR_I7Q7zOamJg4ShCqLxFtegbQdov5Tqf45WzW9YvauGc3JwGLw0BO6yr9gz_Qv6dMeI2o8rlcI22dBMdXHEHFqBD6s9Kwsyfrp_1GS20QuIVAJXcoXWEKjHamjZxIoImB8fb-JhE2paTGRI2z5B7Qhp0.vl8dJ391KNwo-7QDZ0BBpIoUNMZlihgH82AJqpagmD0&dib_tag=se&keywords=alexa%2Becho&qid=1757850549&sprefix=alexa%2Be%2Caps%2C480&sr=8-7-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&th=1",
+      "affliatedHeading":"Amazon Alexa"
     },
     {
       "heading": "How Alexa Works: Voice Recognition and Cloud Intelligence",
