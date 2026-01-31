@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQUBE Finance - Professional Investment Calculators</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html"><i class="fas fa-cube me-2"></i>SQUBE Finance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Calculators</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-5 text-center text-white bg-primary hero-gradient">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Plan Your Financial Future</h1>
+            <p class="lead mb-0">Professional tools to calculate SIP, Returns, Inflation, and more.</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container py-5" id="main-container">
+
+        <!-- Dashboard: Tool Selector -->
+        <div id="dashboard-view" class="row g-4">
+
+            <!-- SIP Calculator Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm tool-card" onclick="showCalculator('sip-calc')">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-success text-white mb-3">
+                            <i class="fas fa-hand-holding-usd fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">SIP Calculator</h5>
+                        <p class="card-text text-muted">Calculate projected returns for your Monthly Systematic
+                            Investment Plans.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FD Calculator Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm tool-card" onclick="showCalculator('fd-calc')">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-info text-white mb-3">
+                            <i class="fas fa-piggy-bank fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">FD Calculator</h5>
+                        <p class="card-text text-muted">Check maturity amount for Fixed Deposits with various interest
+                            compounding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mutual Fund Returns Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm tool-card" onclick="showCalculator('mf-calc')">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-warning text-white mb-3">
+                            <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Mutual Fund Returns</h5>
+                        <p class="card-text text-muted">Estimate returns on your Lumpsum mutual fund investments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inflation Calculator Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm tool-card" onclick="showCalculator('inflation-calc')">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-danger text-white mb-3">
+                            <i class="fas fa-arrow-trend-up fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Inflation Calculator</h5>
+                        <p class="card-text text-muted">See what your money will be worth in the future.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compound Interest Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm tool-card" onclick="showCalculator('compound-calc')">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-secondary text-white mb-3">
+                            <i class="fas fa-percent fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Compound Interest</h5>
+                        <p class="card-text text-muted">The power of compounding explained with numbers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Net Worth Calculator Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm tool-card" onclick="showCalculator('networth-calc')">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-dark text-white mb-3">
+                            <i class="fas fa-balance-scale fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Net Worth Calculator</h5>
+                        <p class="card-text text-muted">Track your financial health by comparing Assets vs Liabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Fund Calculator Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm tool-card" onclick="showCalculator('emergency-calc')">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-primary text-white mb-3">
+                            <i class="fas fa-shield-alt fa-2x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold">Emergency Fund</h5>
+                        <p class="card-text text-muted">Determine how much you need to save for unexpected events.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CALCULATOR SECTIONS (Hidden by default) -->
+
+        <!-- SIP Calculator Section -->
+        <div id="sip-calc" class="calculator-view d-none">
+            <button class="btn btn-outline-secondary mb-4" onclick="showDashboard()"><i class="fas fa-arrow-left"></i>
+                Back to Dashboard</button>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card-header bg-success text-white fw-bold">SIP Detailed Calculator</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Monthly Investment (₹)</label>
+                                <input type="number" class="form-control" id="sip-amount" value="5000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Expected Return Rate (p.a) %</label>
+                                <input type="number" class="form-control" id="sip-rate" value="12">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Time Period (Years)</label>
+                                <input type="number" class="form-control" id="sip-years" value="10">
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-success" onclick="calculateSIP()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4 class="text-muted mb-4">Projected Value</h4>
+                            <h2 class="display-4 fw-bold text-success mb-2">₹ <span id="sip-result">0</span></h2>
+                            <div class="mt-4 w-100 d-flex justify-content-around">
+                                <div>
+                                    <small class="text-muted">Invested Amount</small>
+                                    <h5 class="fw-bold">₹ <span id="sip-invested">0</span></h5>
+                                </div>
+                                <div>
+                                    <small class="text-muted">Est. Returns</small>
+                                    <h5 class="fw-bold text-success">₹ <span id="sip-gains">0</span></h5>
+                                </div>
+                            </div>
+                            <div class="mt-4" style="height: 250px; width: 100%;">
+                                <canvas id="sipChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FD Calculator Section -->
+        <div id="fd-calc" class="calculator-view d-none">
+            <button class="btn btn-outline-secondary mb-4" onclick="showDashboard()"><i class="fas fa-arrow-left"></i>
+                Back to Dashboard</button>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card-header bg-info text-white fw-bold">Fixed Deposit Calculator</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Total Investment (₹)</label>
+                                <input type="number" class="form-control" id="fd-amount" value="100000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Interest Rate (p.a) %</label>
+                                <input type="number" class="form-control" id="fd-rate" value="6.5">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Time Period (Years)</label>
+                                <input type="number" class="form-control" id="fd-years" value="5">
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-info text-white" onclick="calculateFD()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4 class="text-muted mb-4">Maturity Value</h4>
+                            <h2 class="display-4 fw-bold text-info mb-2">₹ <span id="fd-result">0</span></h2>
+                            <div class="mt-4 w-100">
+                                <small class="text-muted">Total Interest Earned</small>
+                                <h5 class="fw-bold text-success">₹ <span id="fd-gains">0</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mutual Fund Calculator Section -->
+        <div id="mf-calc" class="calculator-view d-none">
+            <button class="btn btn-outline-secondary mb-4" onclick="showDashboard()"><i class="fas fa-arrow-left"></i>
+                Back to Dashboard</button>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card-header bg-warning text-dark fw-bold">Lumpsum Investments</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Total Investment (₹)</label>
+                                <input type="number" class="form-control" id="mf-amount" value="50000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Expected Return Rate (p.a) %</label>
+                                <input type="number" class="form-control" id="mf-rate" value="12">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Time Period (Years)</label>
+                                <input type="number" class="form-control" id="mf-years" value="5">
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-warning" onclick="calculateMF()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4 class="text-muted mb-4">Expected Value</h4>
+                            <h2 class="display-4 fw-bold text-warning mb-2">₹ <span id="mf-result">0</span></h2>
+                            <div class="mt-4 w-100">
+                                <small class="text-muted">Wealth Gained</small>
+                                <h5 class="fw-bold text-success">₹ <span id="mf-gains">0</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inflation Calculator -->
+        <div id="inflation-calc" class="calculator-view d-none">
+            <button class="btn btn-outline-secondary mb-4" onclick="showDashboard()"><i class="fas fa-arrow-left"></i>
+                Back to Dashboard</button>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card-header bg-danger text-white fw-bold">Inflation Calculator</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Current Cost (₹)</label>
+                                <input type="number" class="form-control" id="inf-current" value="10000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Inflation Rate (%)</label>
+                                <input type="number" class="form-control" id="inf-rate" value="6">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Years from now</label>
+                                <input type="number" class="form-control" id="inf-years" value="10">
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-danger" onclick="calculateInflation()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4 class="text-muted mb-4">Future Cost</h4>
+                            <h2 class="display-4 fw-bold text-danger mb-2">₹ <span id="inf-result">0</span></h2>
+                            <p class="text-muted mt-3">This is what <strong>₹<span
+                                        id="inf-current-display">10000</span></strong> will cost in <strong><span
+                                        id="inf-years-display">10</span></strong> years at <strong><span
+                                        id="inf-rate-display">6</span>%</strong> inflation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compound Interest Calculator -->
+        <div id="compound-calc" class="calculator-view d-none">
+            <button class="btn btn-outline-secondary mb-4" onclick="showDashboard()"><i class="fas fa-arrow-left"></i>
+                Back to Dashboard</button>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card-header bg-secondary text-white fw-bold">Compound Interest Calculator</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Principal Amount (₹)</label>
+                                <input type="number" class="form-control" id="ci-principal" value="50000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Annual Interest Rate (%)</label>
+                                <input type="number" class="form-control" id="ci-rate" value="8">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Time Period (Years)</label>
+                                <input type="number" class="form-control" id="ci-years" value="5">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Compounding Frequency</label>
+                                <select class="form-select" id="ci-frequency">
+                                    <option value="1">Annually</option>
+                                    <option value="2">Half-Yearly</option>
+                                    <option value="4">Quarterly</option>
+                                    <option value="12">Monthly</option>
+                                </select>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-secondary" onclick="calculateCI()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4 class="text-muted mb-4">Total Amount</h4>
+                            <h2 class="display-4 fw-bold text-secondary mb-2">₹ <span id="ci-result">0</span></h2>
+                            <div class="mt-4 w-100">
+                                <small class="text-muted">Interest Earned</small>
+                                <h5 class="fw-bold text-success">₹ <span id="ci-interest">0</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Net Worth Calculator -->
+        <div id="networth-calc" class="calculator-view d-none">
+            <button class="btn btn-outline-secondary mb-4" onclick="showDashboard()"><i class="fas fa-arrow-left"></i>
+                Back to Dashboard</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card shadow mb-3">
+                        <div class="card-header bg-success text-white">Assets (What you own)</div>
+                        <div class="card-body">
+                            <div class="mb-2"><input type="number" class="form-control mb-1 asset-input"
+                                    placeholder="Cash"></div>
+                            <div class="mb-2"><input type="number" class="form-control mb-1 asset-input"
+                                    placeholder="Investments"></div>
+                            <div class="mb-2"><input type="number" class="form-control mb-1 asset-input"
+                                    placeholder="Real Estate"></div>
+                            <div class="mb-2"><input type="number" class="form-control mb-1 asset-input"
+                                    placeholder="Vehicles"></div>
+                            <div class="mb-2"><input type="number" class="form-control mb-1 asset-input"
+                                    placeholder="Others"></div>
+                        </div>
+                    </div>
+                    <div class="card shadow">
+                        <div class="card-header bg-danger text-white">Liabilities (What you owe)</div>
+                        <div class="card-body">
+                            <div class="mb-2"><input type="number" class="form-control mb-1 liability-input"
+                                    placeholder="Loans"></div>
+                            <div class="mb-2"><input type="number" class="form-control mb-1 liability-input"
+                                    placeholder="Mortgage"></div>
+                            <div class="mb-2"><input type="number" class="form-control mb-1 liability-input"
+                                    placeholder="Credit Card Debt"></div>
+                            <div class="mb-2"><input type="number" class="form-control mb-1 liability-input"
+                                    placeholder="Others"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow h-100 d-flex flex-column justify-content-center">
+                        <div class="card-body text-center">
+                            <button class="btn btn-dark w-100 mb-4" onclick="calculateNetWorth()">Calculate Net
+                                Worth</button>
+                            <h4 class="text-muted">Your Net Worth</h4>
+                            <h2 class="display-4 fw-bold text-primary">₹ <span id="nw-result">0</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Fund Calculator -->
+        <div id="emergency-calc" class="calculator-view d-none">
+            <button class="btn btn-outline-secondary mb-4" onclick="showDashboard()"><i class="fas fa-arrow-left"></i>
+                Back to Dashboard</button>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card shadow">
+                        <div class="card-header bg-primary text-white fw-bold">Emergency Fund Calculator</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Monthly Expenses (₹)</label>
+                                <input type="number" class="form-control" id="ef-expenses" value="20000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Duration of coverage (Months)</label>
+                                <input type="number" class="form-control" id="ef-months" value="6">
+                                <small class="text-muted">Recommended: 6-12 months</small>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary" onclick="calculateEmergencyFund()">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
+                            <h4 class="text-muted mb-4">Required Emergency Fund</h4>
+                            <h2 class="display-4 fw-bold text-primary mb-2">₹ <span id="ef-result">0</span></h2>
+                            <p class="text-muted">This amount should be kept in a high-liquidity instrument like Savings
+                                Account or Liquid Funds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="bg-white py-4 mt-5 border-top">
+        <div class="container text-center text-muted">
+            &copy; 2025 SQUBE Finance. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
