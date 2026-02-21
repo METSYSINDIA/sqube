@@ -167,3 +167,30 @@ body {
 .blog-card:hover .blog-img-placeholder i {
     transform: scale(1.1);
 }
+
+/* Coming Soon Section Styles */
+.bg-light-section {
+    background-color: #fcfcfc;
+}
+
+.icon-pulse {
+    display: inline-block;
+    animation: pulse 2s infinite linear;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
