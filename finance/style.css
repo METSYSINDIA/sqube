@@ -1,23 +1,66 @@
-/* Custom Styles for SQUBE Finance */
+/* Global Theme Variables */
+:root {
+    --primary-color: #007bff;
+    --bg-light: #f8f9fa;
+    --text-muted: #6c757d;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+}
+
+/* Navbar Unification */
+.navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    color: #495057 !important;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
 
 /* Hero Section */
 .hero-gradient {
     background: linear-gradient(135deg, #0061f2 0%, #00c6f9 100%);
+    padding: 80px 0 60px;
 }
 
-/* Tool Cards */
-.tool-card {
+.hero-blog-style {
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+/* Card Unification */
+.card {
+    border: none !important;
+    border-radius: var(--border-radius);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.tool-card {
     cursor: pointer;
 }
 
-.tool-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-}
-
-/* Icons */
+/* Icons and Badges */
 .icon-circle {
     width: 64px;
     height: 64px;
@@ -28,19 +71,99 @@
     margin: 0 auto;
 }
 
-/* Calculator Views */
+.bg-soft-primary {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.bg-soft-success {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.bg-soft-info {
+    background-color: rgba(23, 162, 184, 0.1);
+}
+
+/* Animation */
 .calculator-view {
     animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .display-4 {
         font-size: 2.5rem;
     }
+}
+
+/* Blog Specific */
+.blog-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(45deg, #0061f2, #6900f2);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(45deg, #1cc88a, #13855c);
+}
+
+.bg-gradient-info {
+    background: linear-gradient(45deg, #36b9cc, #258391);
+}
+
+/* Blog Section Styles */
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .1) !important;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(45deg, #0061f2, #6900f2);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(45deg, #1cc88a, #13855c);
+}
+
+.bg-gradient-info {
+    background: linear-gradient(45deg, #36b9cc, #258391);
+}
+
+.bg-soft-primary {
+    background-color: rgba(0, 97, 242, 0.1);
+}
+
+.bg-soft-success {
+    background-color: rgba(28, 200, 138, 0.1);
+}
+
+.bg-soft-info {
+    background-color: rgba(54, 185, 204, 0.1);
+}
+
+.blog-img-placeholder i {
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-img-placeholder i {
+    transform: scale(1.1);
 }
